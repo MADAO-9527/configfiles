@@ -174,3 +174,10 @@ alias vi='vim'
 trap 'echo -ne "\e[0m"' DEBUG
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# 设置bash默认启动tmux
+if [[ "$TERM" != "screen" ]]
+then
+  tmux attach-session -t "$USER" || tmux new-session -s "$USER"
+  exit
+fi
