@@ -10,6 +10,7 @@ set autoindent
 set smartindent
 set showcmd
 set incsearch
+set noswapfile
 set background=light
 set history=50
 set shiftwidth=2
