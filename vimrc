@@ -6,33 +6,33 @@ set encoding=utf-8
 set showmode
 set number
 set ruler
-set autoindent
-set smartindent
 set showcmd
 set incsearch
 set noswapfile
 set background=light
 set history=50
+syntax enable
+highlight CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=NONE guifg=NONE
+set cursorline
+"缩进"
+set smartindent
 set shiftwidth=2
 set softtabstop=2
 set expandtab
 %retab!
-set cursorline
-highlight CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=NONE guifg=NONE
-syntax enable
 
 "快捷键"
 let mapleader=','
 nnoremap Y y$
 nnoremap <c-tab> :tabn<CR>
 nnoremap , :
-nnoremap ,q :q!<CR>
-nnoremap ,w :w<CR>
-nnoremap ,wq :wq<CR>
-nnoremap ,qa :qall!<CR>
-nnoremap ,wqa :wqall<CR>
-nnoremap ,v <Esc>"+p
-nnoremap ,n :tabnew<CR>
+nnoremap <Leader>q :q!<CR>
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>wq :wq<CR>
+nnoremap <Leader>qa :qall!<CR>
+nnoremap <Leader>wqa :wqall<CR>
+nnoremap <Leader>v <Esc>"+p
+nnoremap <Leader>n :tabnew<CR>
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
@@ -59,7 +59,8 @@ if has('gui_running')
   filetype plugin indent on
 
   set guifont=Source\ Code\ Pro\ for\ Powerline\ 10
-  colorscheme Tomorrow-Night
+  colorscheme solarized
+  set background=dark
   set guioptions-=T
   set guioptions-=m
   set guioptions-=L
@@ -94,12 +95,12 @@ if has('gui_running')
     endif
   endfunction
   autocmd BufEnter * call CheckLeftBuffers()
-  let NERDTreeShowHidden=1                            " 是否显示隐藏文件
-  let NERDTreeIgnore=['\.pyc','\~$','\.swp']          " 忽略一下文件的显示
+  let NERDTreeShowHidden=0                            " 是否显示隐藏文件
+  let NERDTreeIgnore=['\.pyc','\~$','\.swp']          " 忽略以下文件的显示
   let g:nerdtree_tabs_open_on_console_startup=1       " 设置打开vim的时候默认打开目录树
 
   "vim-airline"
-  let g:airline_theme='bubblegum'
+  let g:airline_theme='light'
   let g:airline_powerline_fonts = 1
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#tabline#buffer_nr_show = 1
