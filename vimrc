@@ -24,20 +24,28 @@ set expandtab
 "快捷键"
 let mapleader=','
 nnoremap Y y$
-nnoremap <c-tab> :tabn<CR>
 nnoremap , :
+
 nnoremap <Leader>q :q!<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>wq :wq<CR>
 nnoremap <Leader>qa :qall!<CR>
 nnoremap <Leader>wqa :wqall<CR>
+
 nnoremap <Leader>v <Esc>"+p
+nnoremap ,ss :set syntax=
+
+nnoremap <c-tab> :tabn<CR>
 nnoremap <Leader>n :tabnew<CR>
+
+nnoremap <Leader>bn :bnext<CR>
+nnoremap <Leader>bp :bprev<CR>
+nnoremap <Leader>bd :bdelete
+
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
-nnoremap ,ss :set syntax=
 
 "粘贴时不置换“剪贴板”
 xnoremap p pgvy
@@ -58,8 +66,8 @@ if has('gui_running')
   call vundle#end()
   filetype plugin indent on
 
-  set guifont=Source\ Code\ Pro\ for\ Powerline\ 10
-  colorscheme solarized
+  set guifont=Source\ Code\ Pro\ for\ Powerline\ 10.5
+  colorscheme Tomorrow-Night
   set background=dark
   set guioptions-=T
   set guioptions-=m
